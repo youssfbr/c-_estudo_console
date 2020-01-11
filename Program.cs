@@ -44,7 +44,28 @@ namespace estudo_console
                         }
                         break;
                     case "3":
-                        //TODO: calcular media geral
+                        decimal notaTotal = 0;
+                        var nrAlunos = 0;
+
+                        foreach (var b in alunos) 
+                        {
+                            if (!string.IsNullOrEmpty(b.Nome)) {                              
+
+                                notaTotal += b.Nota;
+                                nrAlunos++;
+                            }
+                        }
+
+                        if (nrAlunos != 0) 
+                        {
+                            var media = notaTotal / nrAlunos;
+                            Console.WriteLine($"MÉDIA GERAL: {media}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Não há notas de alunos");
+                        }                        
+                                                
                         break;                    
                     default:
                         throw new ArgumentOutOfRangeException();
