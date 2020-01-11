@@ -35,7 +35,13 @@ namespace estudo_console
                         
                         break;
                     case "2":
-                        //TODO: listar alunos
+                        foreach (var a in alunos)
+                        {
+                            if (!string.IsNullOrEmpty(a.Nome))
+                            {
+                                Console.WriteLine($"Aluno: {a.Nome} - Nota: {a.Nota}");
+                            }                            
+                        }
                         break;
                     case "3":
                         //TODO: calcular media geral
@@ -49,7 +55,8 @@ namespace estudo_console
         }
 
         private static string ObterOpcaoUsuario() 
-            {            
+            {   
+                Console.WriteLine();         
                 Console.WriteLine("Informe a opção desejada!");
                 Console.WriteLine("1 - Inserir novo aluno");
                 Console.WriteLine("2 - Listar alunos");
