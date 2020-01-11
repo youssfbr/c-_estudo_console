@@ -6,6 +6,7 @@ namespace estudo_console
     {
         static void Main(string[] args)
         {
+            Aluno[] alunos = new Aluno[5];
             string opcaoUsuario = ObterOpcaoUsuario();
 
             while (opcaoUsuario.ToUpper() != "X")
@@ -39,6 +40,7 @@ namespace estudo_console
                 Console.WriteLine();
 
                 string opcaoUsuario = Console.ReadLine();
+                Console.WriteLine();
                 return opcaoUsuario;
             }
     }
