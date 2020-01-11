@@ -7,6 +7,7 @@ namespace estudo_console
         static void Main(string[] args)
         {
             Aluno[] alunos = new Aluno[5];
+            int indiceAluno = 0;
             string opcaoUsuario = ObterOpcaoUsuario();
 
             while (opcaoUsuario.ToUpper() != "X")
@@ -14,7 +15,24 @@ namespace estudo_console
                 switch (opcaoUsuario)
                 {
                     case "1":
-                        //TODO: adicionar aluno
+                        Console.WriteLine("Informe o nome do aluno: ");
+                        Aluno aluno = new Aluno();
+                        aluno.Nome = Console.ReadLine();
+
+                        Console.WriteLine("Informe a nota do aluno: ");      
+
+                        if (decimal.TryParse(Console.ReadLine(), out decimal nota)) 
+                        {
+                            aluno.Nota = nota; 
+                        }
+                        else 
+                        {
+                            throw new ArgumentException("O valor da nota deve ser decimal.");
+                        }
+
+                        alunos[indiceAluno] = aluno;
+                        indiceAluno++;
+                        
                         break;
                     case "2":
                         //TODO: listar alunos
